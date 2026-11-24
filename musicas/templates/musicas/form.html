@@ -1,0 +1,12 @@
+{% extends 'musicas/base.html' %}
+
+{% block conteudo %}
+<h1>{{ titulo_pagina }}</h1>
+
+<form method="post" class="formulario">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="botao">Salvar</button>
+    <a href="{% url 'lista' %}">Cancelar</a>
+</form>
+{% endblock %}

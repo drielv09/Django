@@ -1,0 +1,133 @@
+:root {
+    --fundo: #1b1424;
+    --fundo-claro: #2a2038;
+    --texto: #f3eefb;
+    --texto-suave: #b9aed0;
+    --destaque: #ff4f8b;
+    --perigo: #e5484d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    color: var(--destaque);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    background: var(--fundo-claro);
+}
+
+.logo {
+    color: var(--texto);
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+main {
+    max-width: 900px;
+    margin: 32px auto;
+    padding: 0 16px;
+}
+
+.botao {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--destaque);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.botao.perigo {
+    background: var(--perigo);
+}
+
+.aviso {
+    padding: 10px 16px;
+    background: var(--fundo-claro);
+    border-left: 4px solid var(--destaque);
+    border-radius: 4px;
+}
+
+.tabela-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--fundo-claro);
+}
+
+th {
+    color: var(--texto-suave);
+}
+
+tbody tr:hover {
+    background: var(--fundo-claro);
+}
+
+.acoes a {
+    margin-right: 12px;
+}
+
+.acoes a.perigo {
+    color: var(--perigo);
+}
+
+.formulario {
+    max-width: 480px;
+}
+
+.formulario p {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.formulario input {
+    padding: 8px;
+    background: var(--fundo-claro);
+    color: var(--texto);
+    border: 1px solid var(--texto-suave);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.formulario input:focus {
+    outline: 2px solid var(--destaque);
+}
+
+.formulario .botao {
+    margin-right: 12px;
+}
+
+.errorlist {
+    margin: 0;
+    padding: 0;
+    color: var(--perigo);
+    list-style: none;
+}

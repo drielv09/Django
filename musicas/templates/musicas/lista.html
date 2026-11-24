@@ -1,0 +1,39 @@
+{% extends 'musicas/base.html' %}
+
+{% block conteudo %}
+<h1>Músicas cadastradas</h1>
+
+{% if musicas %}
+<div class="tabela-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Artista</th>
+                <th>Álbum</th>
+                <th>Gênero</th>
+                <th>Ano</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for musica in musicas %}
+            <tr>
+                <td>{{ musica.titulo }}</td>
+                <td>{{ musica.artista }}</td>
+                <td>{{ musica.album|default:"-" }}</td>
+                <td>{{ musica.genero }}</td>
+                <td>{{ musica.ano|default:"-" }}</td>
+                <td class="acoes">
+                    <a href="{% url 'editar' musica.id %}">Editar</a>
+                    <a href="{% url 'excluir' musica.id %}" class="perigo">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<p>Nenhuma música cadastrada ainda. <a href="{% url 'criar' %}">Adicione a primeira!</a></p>
+{% endif %}
+{% endblock %}

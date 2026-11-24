@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Minha Coleção de Músicas</title>
+    <link rel="stylesheet" href="{% static 'musicas/style.css' %}">
+</head>
+<body>
+    <header>
+        <a href="{% url 'lista' %}" class="logo">♪ Minha Coleção de Músicas</a>
+        <a href="{% url 'criar' %}" class="botao">+ Nova música</a>
+    </header>
+
+    <main>
+        {% if messages %}
+            {% for mensagem in messages %}
+                <p class="aviso">{{ mensagem }}</p>
+            {% endfor %}
+        {% endif %}
+
+        {% block conteudo %}{% endblock %}
+    </main>
+</body>
+</html>
